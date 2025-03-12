@@ -1,4 +1,5 @@
 const express = require ('express')
+const movieRoutes = require('./routes/crud_appi_routes')
 
 const app = express()
 
@@ -8,28 +9,7 @@ app.get ('/', (req,res) => {
     res.send ('Hello world')
 })
 
-// CRUD function for crud-api
-
-// R - for Reading
-app.get ('/movie', ()=>{
-
-})
-
-// c - for creating
-app.post('/movie',()=>{
-
-})
-
-// U - for Updating
-
-app.put ('/movie/:id', ()=>{
-
-})
-
-// D - for deleting
-app.delete('/movie/:id', ()=>{
-
-})
+app.use ("/movie", movieRoutes);
 
 
 app.listen(port, () => {
